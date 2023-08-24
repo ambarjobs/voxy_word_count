@@ -20,5 +20,6 @@ from django.urls import path
 from main import views
 
 urlpatterns = [
+    path('', views.WordCount.as_view(), name='main.word_count'),
     path("admin/", admin.site.urls),
 ]

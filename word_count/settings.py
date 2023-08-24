@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    'main',
 ]
 
 MIDDLEWARE = [
@@ -121,3 +122,11 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+
+# ==================================================================================================
+#   Application specific settings
+# ==================================================================================================
+
+# This limitation is need for security reasons, as to mitigate an stack overflow attack.
+MAX_TEXT_SIZE = 4096

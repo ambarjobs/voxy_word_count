@@ -1,0 +1,6 @@
+.env
+.mypy*
+.vscode*
+requirements_dev.txt
+*.code-workspace
+*.pyc

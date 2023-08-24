@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <h2>Word Count</h2>
+        <div>
+            Please, type some text on the box below and click on the button <strong>Submit</strong>.
+            <br>You'll receive a count of words typed.
+        </div>
+        <div>
+            <form action="{% url 'main.word_count' %}" method="post">
+                {% csrf_token %}
+                {{ word_count_form }}
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+        {% if messages %}
+            <div>
+                {% for message in messages %}
+                    {% if message.tags == 'error' %}
+                        <div>{{ message }}</div>
+                    {% else %}
+                        <div>{{ message }}</div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        {% endif %}
+    </body>
+</html>
