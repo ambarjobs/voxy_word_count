@@ -76,16 +76,21 @@ real web server, like `nginx`.
 ### HTTP instead of HTTPS
 
 Of course in production it'd be mandatory to use a certificate and configure the web server with
-encription through SSL (HTTPS).
+encription through `SSL` (HTTPS).
 
 ### Database
 
-As the challenge don't need a database to operate (but Django does) we'll be using a Sqlite database
-for witch we already have access natively in Python and is the default Django database when another
+As the challenge don't need a database to operate (but Django does) we'll be using a `Sqlite` database
+for witch we already have native access in Python and it's the default Django database when another
 isn't specified.
 
 As this is a small file and will be used only to Dajango administrative tasks it was includes on
 the code base.
+
+### Restriction to run only locally
+
+As SSL (HTTPS) is not being used, the access is restricted to only locally (`settings.ALLOW_HOSTS`),
+even whith `settings.DEBUG = False`.
 
 ### Style conventions
 

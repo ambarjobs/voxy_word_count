@@ -1,6 +1,6 @@
 import string
 
-def _normalize_words(text):
+def _remove_puctuations(text):
     """Remove puctuations from the words (removing also isolated puctuations)."""
 
     punct_translate_table = str.maketrans('', '', string.punctuation)
@@ -10,7 +10,7 @@ def _normalize_words(text):
 def word_counter(text):
     """Counts words in text."""
 
-    return len(_normalize_words(text).split())
+    return len(_remove_puctuations(text).split())
 
 
 # TODO:

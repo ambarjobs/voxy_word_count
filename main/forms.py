@@ -8,5 +8,5 @@ class WordCountForm(forms.Form):
     text = forms.CharField(
         label='',
         max_length=settings.MAX_TEXT_SIZE,
-        widget=forms.Textarea,
+        widget=forms.Textarea(attrs={'cols':80, 'rows':20}),
     )

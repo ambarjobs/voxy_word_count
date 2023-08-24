@@ -1,30 +1,48 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     </head>
     <body>
-        <h2>Word Count</h2>
-        <div>
-            Please, type some text on the box below and click on the button <strong>Submit</strong>.
-            <br>You'll receive a count of words typed.
-        </div>
-        <div>
-            <form action="{% url 'main.word_count' %}" method="post">
-                {% csrf_token %}
-                {{ word_count_form }}
-                <input type="submit" value="Submit">
-            </form>
-        </div>
-        {% if messages %}
-            <div>
-                {% for message in messages %}
-                    {% if message.tags == 'error' %}
-                        <div>{{ message }}</div>
-                    {% else %}
-                        <div>{{ message }}</div>
-                    {% endif %}
-                {% endfor %}
+        <h2 class="title has-text-link-dark is-2">Word Count</h2>
+        <div class="columns">
+            <div class="column is-1">
             </div>
-        {% endif %}
+            <div class="column">
+                <div class="mb-3">
+                    Please, type some text on the box below and click on the button <strong>Submit</strong> to receive a count of words typed:
+                </div>
+                <div>
+                    <form action="{% url 'main.word_count' %}" method="post">
+                        {% csrf_token %}
+                        <div class="field">
+                            {{ word_count_form }}
+                        </div>
+                        <input type="submit" value="Submit" class="button is-info">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="columns">
+            <div class="column is-1">
+            </div>
+            <div class="column is-4">
+                {% if messages %}
+                    <div>
+                        {% for message in messages %}
+                            {% if message.tags == 'error' %}
+                                <div class="notification is-danger">
+                                    {{ message }}
+                                </div>
+                            {% else %}
+                                <div class="notification is-success">
+                                    {{ message }}
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
     </body>
 </html>
