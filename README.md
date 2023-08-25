@@ -101,7 +101,7 @@ even whith `settings.DEBUG = False`.
 ### Style conventions
 
 The code must be mainly adherent to PEP8's more strict specifications.
-As the maximum line lenght is only a recomendation, it was choose 100 characters as this limit.
+As the maximum line lenght is only a recomendation, it was choosen 100 characters as this limit.
 
 ### New Python packages
 
