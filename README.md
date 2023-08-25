@@ -42,7 +42,13 @@ Then point your browser to `http://127.0.0.1:8000/` to get access to the web pag
 
 ## Additional information
 
-For management commands, run `manage.py` without arguments.
+To run tests, run the command below:
+
+```bash
+./manage.py test
+```
+
+For a list of other management commands, run `manage.py` without arguments.
 
 ```bash
 ./manage.py
